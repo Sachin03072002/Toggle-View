@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- Code By WebDevTrick ( https://webdevtrick.com ) -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Toggle Button With HTML &amp; CSS</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <style type="text/css">
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 20%;
+  height: 50px;
+}
+
+.switch input {
+  display:none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  transition: .4s;
+  border: 2px solid black;
+}
+
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 42px;
+  width: 40px;
+  left: 4px;
+  bottom: 2px;
+  background-color: black;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: black;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #00FF00;
+}
+
+input:checked + .slider:before {
+  transform: translateX(12.6rem);
+  background-color: white;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#box {
+  padding-top:50px;
+}
+
+.heading {
+    margin-left: 25%;
+    font-size: 4rem;
+}
+
+body {
+  background-color: white;
+}
+
+.centereddiv {
+  padding-top:20px;
+}
+
+</style>
+</head>
+
+
+<body id="body">
+
+  <div align = "center" class = "centereddiv">
+
+        <div align = "center" id = "box" onclick="clicked()">
+            <label class = "switch" id="Toggle">
+          <input type = "checkbox">
+          <div class = "slider round"></div>
+          </div>
+        </div>
+  <div class = "heading" id="text">Click on the Toggle Button</div>
+  
+<script type="text/javascript">
+var button = document.getElementById("box");
+var i = 1;
+button.addEventListener("click", function () {
+  i += 0.5;
+  if (i % 2 === 0) {
+    document.body.style.backgroundColor = "black";
+    document.getElementById("text").style.color = "white";
+  } else {
+    document.body.style.backgroundColor = "white";
+    document.getElementById("text").style.color = "black";
+  }
+  console.log(i);
+});
+
+</script>
+
+</body>
+ 
+
+</html>
